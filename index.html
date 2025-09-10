@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frox AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^0.7.0"
+  }
+}
+</script>
+</head>
+<body>
+  <div class="grain-overlay"></div>
+  <nav id="navbar">
+    <div class="nav-content">
+      <div class="logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.0208 11.2392V5.47915H24.9999V2.5H16.7599V5.47915H19.7391V11.2392C19.7391 14.1979 17.1582 16.5104 14 16.5104C10.8418 16.5104 8.26087 14.1979 8.26087 11.2392V5.47915H11.24V2.5H3V5.47915H5.97913V11.2392C5.97913 15.8229 9.57704 19.4896 14 19.4896C18.4229 19.4896 22.0208 15.8229 22.0208 11.2392Z" fill="white"/>
+            <path d="M14 28C16.3193 28 18.3636 26.5395 19.2174 24.5208H8.78261C9.63639 26.5395 11.6807 28 14 28Z" fill="url(#logo-gradient)"/>
+            <defs>
+            <linearGradient id="logo-gradient" x1="8.78261" y1="26.2604" x2="19.2174" y2="26.2604" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#8A2BE2"/>
+            <stop offset="1" stop-color="#FF8C00"/>
+            </linearGradient>
+            </defs>
+        </svg>
+        <span>Frox AI</span>
+      </div>
+      <div class="nav-links">
+        <a href="#" id="home-button">Home</a>
+        <a href="#" id="pricing-button">Pricing</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="main-layout" class="lovable-view">
+    <div id="hero-section">
+      <h1 class="hero-title">Generate animated backgrounds with AI</h1>
+      <p class="hero-subtitle">Describe your vision and get production-ready code instantly.</p>
+    </div>
+
+    <div id="chat-column">
+      <main id="chat-container"></main>
+      <form id="prompt-form">
+        <div class="prompt-wrapper">
+            <textarea id="prompt-input" placeholder="e.g., a slow, futuristic digital rain with green particles" aria-label="Chat input" rows="1"></textarea>
+            <button type="submit" id="send-button" aria-label="Send message">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="19" x2="12" y2="5"></line>
+                    <polyline points="5 12 12 5 19 12"></polyline>
+                </svg>
+            </button>
+        </div>
+      </form>
+    </div>
+
+    <div id="preview-column">
+        <div id="preview-header">
+            <h3>Live Preview</h3>
+            <button id="copy-code-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>Copy Code</span>
+            </button>
+        </div>
+        <iframe id="live-preview" title="Live Code Preview"></iframe>
+    </div>
+  </div>
+
+  <div id="pricing-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <button id="close-modal-button" aria-label="Close modal">&times;</button>
+      <h2>Pricing</h2>
+      <p>Frox AI is currently in a free, experimental phase. Enjoy unlimited access to all features while we continue to innovate and improve the platform.</p>
+      <p>Future pricing plans will be announced here. Thank you for being an early user!</p>
+    </div>
+  </div>
+
+  <script type="module" src="index.tsx"></script>
+</body>
+</html>
